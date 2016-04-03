@@ -167,9 +167,9 @@ included here.
 Currently there are three ways to define the functionality of a TR-FSM, i.e.,
 to specify the FSM
 
- - TrfsmGen script
- - KISS2 format
- - Verilog RTL
+- TrfsmGen script
+- KISS2 format
+- Verilog RTL
 
 The TrfsmGen command ``write_bitstream`` saves the generated bitstream to a
 number of different formats, e.g., as VHDL or Verilog vector (e.g., for your
