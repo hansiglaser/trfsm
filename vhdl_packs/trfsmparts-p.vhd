@@ -102,6 +102,21 @@ package TRFSMParts is
       NextState_i : in  std_logic_vector(StateWidth-1 downto 0));
   end component;
 
+  component OutputRegister
+    generic (
+      Width        : integer range 1 to 256);
+    port (
+      Clk_i        : in  std_logic;
+      Reset_n_i    : in  std_logic;
+      Value_i      : in  std_logic_vector(Width-1 downto 0);
+      Value_o      : out std_logic_vector(Width-1 downto 0);
+      CfgMode_i    : in  std_logic;
+      CfgClk_i     : in  std_logic;
+      CfgShift_i   : in  std_logic;
+      CfgDataIn_i  : in  std_logic;
+      CfgDataOut_o : out std_logic);
+  end component;
+
 end TRFSMParts;
 
 package body TRFSMParts is

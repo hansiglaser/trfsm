@@ -153,7 +153,8 @@ Files
 -----
 
 For simulation, logical equivalence checking, and synthesis you need all VHDL
-files in the directories ``vhdl/`` and ``vhdl_packs/``.
+files in the directories ``vhdl/`` (except ``OutputRegister*.vhd`` and
+``trfsm-outreg-struct-a.vhd``) and ``vhdl_packs/``.
 
 Configuration
 -------------
@@ -275,6 +276,15 @@ probably be different between the RTL design and the TR-FSMs. Use
 only LEC supports the specification of encodings of FSMs in hierarchical
 module, therefore Formality is not supported here.
 
+Variants
+--------
+Martin Schmölzer extended the TR-FSM so that the output signals can be
+optionally register. To use this variant, include ``vhdl/OutputRegister*.vhd``
+and use ``trfsm-outreg-struct-a.vhd`` instead of ``trfsm-struct-a.vhd``. In
+TrfsmGen, specify version ``REG`` with the ``create_trfsm`` command and use
+``set_outputs_registered`` to configure the use of the output register. Note
+that this variant is not covered with the testbenches.
+
 
 Licence
 =======
@@ -283,6 +293,10 @@ The TR-FSM is distributed under the terms of the GNU LGPL 2 or later. You can
 freely use the design files and scripts in your (commercial) chip designs. If
 you improve the design files or the scripts, you have to provide their source
 code. This however doesn't affect the other parts of your chip design.
+
+The output register contributed by Martin Schmölzer is distributed under the
+terms of the GNU GPL 3. If you use the output register, you have to distribute
+your chip as source code as well.
 
 
 TODO
